@@ -1,0 +1,86 @@
+body {
+    font-family: Nunito, Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+::placeholder{
+    color: grey;
+}
+textarea{
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+textarea {
+    height: 100px;
+    background-color: black;
+    color: white;
+}
+#output-container {
+    position: relative;
+    padding: 2px;
+    border-radius: 5px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+#output {
+    background-color: black;
+    border: 1px solid grey;
+    padding: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    min-height: 50px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 0.5rem;
+    cursor: pointer;
+    border: 1px solid grey;
+    background-color: black;
+    color: white;
+}
+button:hover {
+    background-image: linear-gradient(rgba(0, 0, 255,0.8), rgba(128, 0, 128,0.8));
+    /*background-color: hsl(0, 0%, 21%);*/
+}
+#animation-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 0;
+}
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+#animation-container::after, #animation-container::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle),transparent,purple,transparent, blue, transparent);
+    animation: 3s spin linear infinite;
+    border-radius: 10px;
+}
+#animation-container::before {
+    filter: blur(10px);
+    opacity: 0.9;
+}
+@keyframes spin {
+    from { --angle: 0deg; }
+    to { --angle: 360deg; }
+}
