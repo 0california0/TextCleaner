@@ -71,4 +71,5 @@ function playAnimation() {
 function clearInput() {
     document.getElementById('input').value = '';
     document.getElementById('output').innerText = '';
+    isTyping = false;
 }
