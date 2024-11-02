@@ -1,0 +1,188 @@
+body {
+    font-family: Nunito, Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+::placeholder{
+    color: grey;
+}
+#next-page{
+    float: right;
+}
+textarea{
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    height: 100px;
+    background-color: black;
+    color: white;
+}
+.info-icon {
+    position: relative;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: grey;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 16px;
+    cursor: help;
+    font-size: 10px;
+    font-style: italic;
+}
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    background-color: #333;
+    color: white;
+    text-align: left;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.info-icon:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+/* Pfeil für Tooltip */
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+.example-list {
+    margin: 8px 0 0 0;
+    padding-left: 20px;
+}
+/* Medienabfragen für responsive Anpassungen */
+@media screen and (max-width: 600px) {
+    .tooltip {
+        width: calc(100vw - 40px);
+        max-width: none;
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        transform: none;
+    }
+    .tooltip::after {
+        display: none;
+    }
+}
+
+/* Anpassung für Tooltips nahe am rechten Rand */
+@media screen and (min-width: 601px) {
+    .info-icon:hover .tooltip {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    /* Wenn der Tooltip über den rechten Rand gehen würde */
+    .info-icon:hover .tooltip.adjust-right {
+        left: auto;
+        right: 0;
+        transform: none;
+    }
+    .info-icon:hover .tooltip.adjust-right::after {
+        left: auto;
+        right: 10px;
+    }
+    
+    /* Wenn der Tooltip über den linken Rand gehen würde */
+    .info-icon:hover .tooltip.adjust-left {
+        left: 0;
+        transform: none;
+    }
+    .info-icon:hover .tooltip.adjust-left::after {
+        left: 10px;
+        margin-left: 0;
+    }
+}
+#charsToRemove{
+    background-color: black;
+    color: white;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#output-container {
+    position: relative;
+    padding: 2px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#output {
+    background-color: black;
+    border: 1px solid grey;
+    padding: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    min-height: 50px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+}
+button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 0.5rem;
+    cursor: pointer;
+    border: 1px solid grey;
+    background-color: black;
+    color: white;
+}
+button:hover {
+    background-image: linear-gradient(rgba(0, 0, 255,0.8), rgba(128, 0, 128,0.8));
+    /*background-color: hsl(0, 0%, 21%);*/
+}
+#animation-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 0;
+}
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+#animation-container::after, #animation-container::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle),transparent,purple,transparent, blue, transparent);
+    animation: 3s spin linear infinite;
+    border-radius: 10px;
+}
+#animation-container::before {
+    filter: blur(10px);
+    opacity: 0.9;
+}
+@keyframes spin {
+    from { --angle: 0deg; }
+    to { --angle: 360deg; }
+}
