@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Text Cleaner</h1>
-    <button id="next-page" onclick="window.location.href='index.html'" title="wechsle in den individualisierbaren Modus"></button>
+    <button id="next-page" onclick="window.location.href='index.html'" title="wechsle in den individualisierbaren Modus">pro</button>
     <p>Diese Anwendung entfernt '#' und '*' Zeichen aus einem Text.</p>
     <textarea id="input" placeholder="Geben Sie hier Ihren Text ein..."></textarea>
     <div>
@@ -33,9 +33,9 @@
         </div>
     </div>
     <br>
-    <button onclick="cleanAndFormatText()">Text bereinigen</button>
-    <button onclick="skipAndCopy()">Text kopieren</button>
-    <button onclick="clearInput()">Textfeld leeren</button>
+    <button class="btn" onclick="cleanAndFormatText()">Text bereinigen</button>
+    <button class="btn" onclick="skipAndCopy()">Text kopieren</button>
+    <button class="btn" onclick="clearInput()">Textfeld leeren</button>
     <h2>Bereinigter und formatierter Text:</h2>
     <div id="output-container">
         <div id="animation-container"></div>
