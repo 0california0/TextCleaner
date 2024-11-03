@@ -140,7 +140,7 @@ textarea{
     z-index: 1;
     border-radius: 10px;
 }
-button {
+.btn {
     margin-right: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -150,9 +150,20 @@ button {
     background-color: black;
     color: white;
 }
-button:hover {
+.btn:hover {
     background-image: linear-gradient(rgba(0, 0, 255,0.8), rgba(128, 0, 128,0.8));
     /*background-color: hsl(0, 0%, 21%);*/
+}
+#next-page{
+    float: right;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid grey;
+    background-color: black;
+    color: white;
+}
+#next-page:hover{
+    background-image: linear-gradient(rgba(0, 0, 255,0.8), rgba(128, 0, 128,0.8));
 }
 #animation-container {
     position: absolute;
