@@ -159,7 +159,7 @@ textarea{
     background-color: black;
     color: white;
     text-align: center;
-    width: 3rem;
+    width: 48px;
 }
 #next-page:hover{
     background-image: linear-gradient(rgba(0, 0, 255,0.8), rgba(128, 0, 128,0.8));
