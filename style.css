@@ -17,9 +17,6 @@ textarea{
     background-color: black;
     color: white;
 }
-#next-page{
-    float: right;
-}
 #output-container {
     position: relative;
     padding: 2px;
@@ -60,6 +57,7 @@ textarea{
     border: 1px solid grey;
     background-color: black;
     color: white;
+    text-align: center;
 }
 #next-page:hover{
     background-image: linear-gradient(rgba(0, 0, 255,0.8), rgba(128, 0, 128,0.8));
