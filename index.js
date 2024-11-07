@@ -38,7 +38,7 @@ function typeWriter(text) {
                 output.innerHTML += text.charAt(i);
                 i++;
             }
-            setTimeout(type, 0.001);
+            setTimeout(type, 1);
         } else {
             isTyping = false;
             playAnimation();
