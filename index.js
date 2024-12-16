@@ -24,6 +24,7 @@ function formatText(text) {
 
 function typeWriter(text) {
     const output = document.getElementById('output');
+    let words = text.split(' ');
     output.innerHTML = '';
     let i = 0;
     isTyping = true;
